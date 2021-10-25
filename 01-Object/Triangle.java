@@ -31,6 +31,18 @@ public class Triangle{
 		}
 	}
 	
+	public void setVertex(int i, Point j){
+		if (i == 1){
+			v1 = j;
+		}
+		if (i == 2){
+			 v2 = j;
+		}
+		if (i == 3){
+			v3 = j;
+		}
+	}
+	
 }
 
 
