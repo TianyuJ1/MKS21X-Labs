@@ -22,9 +22,13 @@ public class Point{
   	
   }
   
-    public double distanceTo(Point P1){
+   public double distanceTo(Point P1){
   	double dx = x - P1.x;
   	double dy = y - P1.y;
   	return Math.sqrt (dx*dx + dy*dy);
   	}
+  
+   public String toString(){
+   	return "(" + x + ", " + y + ")";
+   }
 }
