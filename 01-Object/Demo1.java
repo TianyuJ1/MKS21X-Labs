@@ -11,6 +11,12 @@ public class Demo1{
     //This one is IMPLIED strongly. You cannot tell by the calling style alone,
     //but you can make an educated guess.
     
+   Triangle t1 = new Triangle(0,0,4,0,4,3);
+   System.out.println( t1.getVertex(1));
+   System.out.println( t1.getVertex(2));
+   System.out.println( t1.getVertex(3));
+   
+   System.out.println( t1.getPerimeter());
    
   }
   
