@@ -45,7 +45,7 @@ public class Triangle{
 	
 	public static boolean closeEnough(double a, double b){
   //How can you determine if two values are close enough to eachother?
-  		if (a / b * 100 <= 1.05) && (a / b * 100 >= 95){
+  		if (a / b * 100 <= 105) && (a / b * 100 >= 95){
   		return true;
   		}else{
   		return false;
