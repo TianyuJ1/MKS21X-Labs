@@ -1,22 +1,22 @@
 public class Triangle{
 	private Point v1, v2, v3;
-	
+
 	public Triangle(Point p1, Point p2, Point p3){
 		v1 = p1;
 		v2 = p2;
 		v3 = p3;
 	}
-	
+
 	public Triangle(double x1, double y1, double x2, double y2, double x3, double y3){
 		v1 = new Point (x1, y1);
 		v2 = new Point (x2, y2);
 		v3 = new Point (x3, y3);
 	}
-	
+
 	public double getPerimeter(){
 		return v1.distanceTo(v2) + v2.distanceTo(v3) + v3.distanceTo(v1);
 	}
-		
+
 	public Point getVertex(int i){
 		if (i == 1){
 			return v1;
@@ -30,7 +30,7 @@ public class Triangle{
 			return null;
 		}
 	}
-	
+
 	public void setVertex(int i, Point j){
 		if (i == 1){
 			v1 = j;
@@ -42,17 +42,21 @@ public class Triangle{
 			v3 = j;
 		}
 	}
-	
+
 	public static boolean closeEnough(double a, double b){
   //How can you determine if two values are close enough to eachother?
-  		if (a / b * 100 <= 105) && (a / b * 100 >= 95){
+  		if ((a / b * 100 <= 100.1) && (a / b * 100 >= 99.9)){
   		return true;
   		}else{
   		return false;
   		}
-  	}		
-}
-	
-}
+  	}
 
 
+
+		public boolean equals(Triangle other){
+			boolean vSame = v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3);
+			
+			return vSame;
+		}
+}
