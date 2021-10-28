@@ -54,9 +54,25 @@ public class Triangle{
 
 
 
-		public boolean equals(Triangle other){
-			boolean vSame = v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3);
+	public boolean equals(Triangle other){
+		boolean vSame = v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3);
 			
-			return vSame;
+		return vSame;
+	}
+		
+		/*Return "scalene", "isosceles", or "equilateral"
+*Make sure to use closeEnough() to determine if two sides are equal because of rounding!
+*/
+	public String classify(){
+		boolean equal1 = closeEnough(v1.distanceTo(v2), v2.distanceTo(v3));
+		boolean equal2 = closeEnough(v2.distanceTo(v3), v3.distanceTo(v1));
+		boolean equal3 = closeEnough(v3.distanceTo(v1), v1.distanceTo(v2));
+		 
+		if (equal1 && equal2 && equal3){
+			return "equilateral";
 		}
+		if (equal1 || equal2 || equal3){
+			return "equilateral";
+		}
+	}
 }
