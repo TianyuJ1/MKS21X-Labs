@@ -55,11 +55,11 @@ public class Triangle{
 
 
 	public boolean equals(Triangle other){
-		boolean vSame = v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3);	
-		
-		if (other.v1 == null){
+		if (other == null){
 		return false;
 		}
+		
+		boolean vSame = v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3);	
 		return vSame;
 		
 	}
@@ -81,4 +81,23 @@ public class Triangle{
 		return "scalene";
 		}
 	}
+	
+	/*Return the area of the triangle
+*Make sure to use the formula: Area = sqrt ( s(s-a)(s-b)(s-c) )
+*where s= perimeter/2 , and a,b,c are the side lengths.
+*/
+	public double area(Point v1, Point v2, Point v3){
+		double s = getPerimeter() * 0.5 ;
+		double a = v1.distanceTo(v2);
+		double b = v2.distanceTo(v3);
+		double c = v3.distanceTo(v1);
+		
+	return Math.sqrt( s * ( s - a) * ( s - b) * (s - c));
+	}
+	
+	   public String toString(){
+   	return "{" + v1 + ", " + v2 + ", " + v3 + "}";
+   	}
+
 }
+
