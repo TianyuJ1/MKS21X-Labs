@@ -55,9 +55,13 @@ public class Triangle{
 
 
 	public boolean equals(Triangle other){
-		boolean vSame = v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3);
-			
+		boolean vSame = v1.equals(other.v1) && v2.equals(other.v2) && v3.equals(other.v3);	
+		
+		if (other.v1 == null){
+		return false;
+		}
 		return vSame;
+		
 	}
 		
 		/*Return "scalene", "isosceles", or "equilateral"
@@ -72,7 +76,9 @@ public class Triangle{
 			return "equilateral";
 		}
 		if (equal1 || equal2 || equal3){
-			return "equilateral";
+			return "isosceles";
+		}else{
+		return "scalene";
 		}
 	}
 }
