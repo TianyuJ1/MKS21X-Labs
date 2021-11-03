@@ -38,7 +38,8 @@ public class RealNumber{
   *Return the this minus the other
   */
   public double subtract(RealNumber other){
-    return 0;
+    double result = this.getValue() - other.getValue();
+    return result;
   }
 
 
@@ -46,7 +47,20 @@ public class RealNumber{
     return value;
   }
 
-  public String toString(){
+  private String toString(){
     return ""+value;
   }
-}
+  
+  public int compareTo(RealNumber other){
+ 	return (int)(this.getValue().compareTo(other.getValue()));
+  }
+  
+  public boolean equals(RealNumber other){
+  	if (this.getValue() == other.getValue()){
+  		return true;
+  		}else{
+  		return false;
+  		}
+  	}
+ }
+  	
