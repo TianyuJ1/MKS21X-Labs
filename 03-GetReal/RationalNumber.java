@@ -39,6 +39,9 @@ public class RationalNumber extends RealNumber
   *@return true when the RationalNumbers have the same numerators and denominators, false otherwise.
   */
   public boolean equals(RationalNumber other){
+  	if (getDenominator() == getNumerator()){
+    return true;
+    }else{
     return false;
   }
 
