@@ -13,23 +13,25 @@ public class RealNumber{
      //other can be ANY RealNumber, including a RationalNumber
 
      //or other subclasses of RealNumber (that aren't written yet)
-     double result = this.getValue() + other.getValue();
+  	double result = this.getValue() + other.getValue();
 
-     return result;
+  	return result;
   }
 
   /*
   *Return the product of this and the other
   */
   public double multiply(RealNumber other){
-    return 0;
+  	double result = this.getValue() * other.getValue();
+  	return result;
   }
 
   /*
   *Return the this divided by the other
   */
   public double divide(RealNumber other){
-    return 0;
+  	double result = this.getValue() / other.getValue();
+    return result;
   }
 
   /*
