@@ -13,8 +13,9 @@ public class RealNumber{
      //other can be ANY RealNumber, including a RationalNumber
 
      //or other subclasses of RealNumber (that aren't written yet)
+     double result = this.getValue() + other.getValue();
 
-     return 0;
+     return result;
   }
 
   /*
