@@ -81,14 +81,14 @@ public class RationalNumber extends RealNumber
   */
   public RationalNumber multiply(RationalNumber other){
   	
-    return null;
+    return super.getValue * other.getValue;
   }
 
   /**
   *Return a new RationalNumber that is the this divided by the other
   */
   public RationalNumber divide(RationalNumber other){
-    return null;
+    return super.getValue / other.getValue;
   }
 
   /**
