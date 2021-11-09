@@ -18,4 +18,14 @@ public class SuperArray2 {
     }
    return false;
  }
+
+ public String toString() {
+   String tostring = "{";
+   for (int x = 0; x <= data.length; x++){
+       toString =+ ",";
+     }
+   }
+ }
+
+ 
 }
