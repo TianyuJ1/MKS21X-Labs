@@ -23,7 +23,7 @@ public class SuperArray2 {
    String tostring = "{";
    for (int x = 0; x <= data.length; x++){
      if (data[x] != null){
-       toString =+ ",";
+       toString += ",";
      }
    }
  }
@@ -31,11 +31,11 @@ public class SuperArray2 {
  public String toStringDebug() {
    String Debug = "[";
    for (int x = 0; x < data.length - 1; x++){
-     Debug =+ data[x];
-     Debug =+ ",";
+     Debug += data[x];
+     Debug += ",";
    }
-   Debug =+ data[SuperArray.length - 1];
-   Debug =+ "]";
+   Debug += data[SuperArray.length - 1];
+   Debug += "]";
    return Debug;
  }
 
