@@ -1,9 +1,12 @@
 public class SuperArray  { 
-  public SuperArray() {
-  }
+
   private String[] data;
   private int size;
   
+    public SuperArray() {
+  	data = new String[10];
+  	size = 0;
+  }
   public int size() {
     return size;
   }
@@ -14,21 +17,25 @@ public class SuperArray  {
       if (data[x] == null) {
        data[x] = s;
         size ++;
-        
-      }
-        return true;
-     
+      }       
    }
+   return true;
+  }
 
  public String toString() {
-   String toString = "{";
-   for (int x = 0; x <= data.length; x++){
+   String toString = "[";
+   for (int x = 0; x < size; x++){
      if (data[x] != null){
+     toString += data[x];
        toString += ",";
-     }
+     }else if (data[x] == null){
+     toString += "";
    }
-   toString += "}";
+   toString += "]";
    return toString;
+  }
+ 
+ return toString;
  }
 /*
  public String toStringDebug() {
@@ -36,7 +43,7 @@ public class SuperArray  {
    for (int x = 0; x < data.length - 1; x++){
      Debrivate String[] data
 
- private int sizeug += data[x];
+ private int Debug += data[x];
      Debug += ",";
    }
    Debug += data[SuperArray.length - 1];
@@ -101,5 +108,7 @@ public class SuperArray  {
 
 
     }*/
+
+
 }
 
