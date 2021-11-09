@@ -1,24 +1,26 @@
-public class SuperArray  {
-  private int size = 0;
+public class SuperArray  { 
   public SuperArray() {
   }
-
-  public int size {
+  private String[] data;
+  private int size;
+  
+  public int size() {
     return size;
   }
 
   public boolean add(String s){
     for (int x = 0; x < data.length-1; x++){
-      if (data[x] == null) {
+      if (data[x] != null) {
+        return false;
+        }else{
         data[x] = s;
         size ++;
-
+        }
+        }
         return true;
-      }
-    }
-   return false;
- }
-
+     
+   }
+/*
  public String toString() {
    String tostring = "{";
    for (int x = 0; x <= data.length; x++){
@@ -31,7 +33,9 @@ public class SuperArray  {
  public String toStringDebug() {
    String Debug = "[";
    for (int x = 0; x < data.length - 1; x++){
-     Debug += data[x];
+     Debrivate String[] data
+
+-private int sizeug += data[x];
      Debug += ",";
    }
    Debug += data[SuperArray.length - 1];
@@ -77,7 +81,9 @@ public class SuperArray  {
       for (int x = data[index]; x < data.length -1; x++){
         data.[x] = removeData[x]+1;
       return removeData;
-      }
+      }rivate String[] data
+
+-private int size
 
       public boolean remove(String target) {
         for (int x = data[index]; x < data.length -1; x++){
@@ -93,6 +99,6 @@ public class SuperArray  {
       }
 
 
-    }
-  }
+    }*/
 }
+
