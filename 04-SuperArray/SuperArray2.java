@@ -61,5 +61,9 @@ public class SuperArray2 {
       data[index]=
       return s;
     }
+
+    SuperArray(int initialCapaticy) {
+      data = new String[initialCapacity];
+    }
   }
 }
