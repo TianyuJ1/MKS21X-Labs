@@ -8,16 +8,15 @@ public class SuperArray  {
     return size;
   }
 
-  public String[] add(String s){
-    for (int x = 0; x < data.length-1; x++){
-      if (data[x] != null) {
-        return data;
-        }else{
-        data[x] = s;
+  public boolean add(String s){
+  
+    for (int x = 0; x <= data.length-1; x++){
+      if (data[x] == null) {
+       data[x] = s;
         size ++;
-        }
+        
       }
-        return data;
+        return true;
      
    }
 
@@ -37,7 +36,7 @@ public class SuperArray  {
    for (int x = 0; x < data.length - 1; x++){
      Debrivate String[] data
 
--private int sizeug += data[x];
+ private int sizeug += data[x];
      Debug += ",";
    }
    Debug += data[SuperArray.length - 1];
