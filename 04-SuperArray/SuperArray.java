@@ -8,28 +8,30 @@ public class SuperArray  {
     return size;
   }
 
-  public boolean add(String s){
+  public String[] add(String s){
     for (int x = 0; x < data.length-1; x++){
       if (data[x] != null) {
-        return false;
+        return data;
         }else{
         data[x] = s;
         size ++;
         }
-        }
-        return true;
+      }
+        return data;
      
    }
-/*
+
  public String toString() {
-   String tostring = "{";
+   String toString = "{";
    for (int x = 0; x <= data.length; x++){
      if (data[x] != null){
        toString += ",";
      }
    }
+   toString += "}";
+   return toString;
  }
-
+/*
  public String toStringDebug() {
    String Debug = "[";
    for (int x = 0; x < data.length - 1; x++){
