@@ -49,5 +49,17 @@ public class SuperArray2 {
    }else{
      return data.indexOf;
    }
- }
+
+   public String set(){
+    if (index == 0 || index > size) {
+     return null;
+    }
+    if (data[index].equals(" ")) {
+      return null;
+    }else{
+      String s = data[index];
+      data[index]=
+      return s;
+    }
+  }
 }
