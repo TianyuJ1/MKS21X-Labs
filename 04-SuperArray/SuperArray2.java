@@ -79,6 +79,19 @@ public class SuperArray2 {
       return removeData;
       }
 
+      public boolean remove(String target) {
+        for (int x = data[index]; x < data.length -1; x++){
+          if (data[index]== target){
+            remove()
+            return true;
+          }
+        }else{
+          return true;
+          remove(indexOf(target));
+        }
+        }
+      }
+
 
     }
   }
