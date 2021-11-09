@@ -38,4 +38,10 @@ public class SuperArray2 {
    Debug =+ "]";
    return Debug;
  }
+
+ public String get(int index) {
+   if (index == 0 || index > size) {
+     return "error";
+   }
+ }
 }
