@@ -43,5 +43,11 @@ public class SuperArray2 {
    if (index == 0 || index > size) {
      return "error";
    }
+
+   if (data[index].equals(" ")) {
+     return null;
+   }else{
+     return data.indexOf;
+   }
  }
 }
