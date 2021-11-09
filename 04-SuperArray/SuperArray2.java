@@ -65,5 +65,12 @@ public class SuperArray2 {
     SuperArray(int initialCapaticy) {
       data = new String[initialCapacity];
     }
+
+    private void resize() {
+      String [] resizeData = String[2 * (data.length +1)]
+      data = resizeData;
+    }
+
+    
   }
 }
