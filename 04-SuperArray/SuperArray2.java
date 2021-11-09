@@ -6,4 +6,16 @@ public class SuperArray2 {
   public int size {
     return size;
   }
+
+  public boolean add(String s){
+    for (int x = 0; x < data.length-1; x++){
+      if (data[x] == null) {
+        data[x] = s;
+        size ++;
+
+        return true;
+      }
+    }
+   return false;
+ }
 }
