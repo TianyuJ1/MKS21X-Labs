@@ -1,4 +1,4 @@
-public class SuperArray2 {
+public class SuperArray  {
   private int size = 0;
   public SuperArray() {
   }
