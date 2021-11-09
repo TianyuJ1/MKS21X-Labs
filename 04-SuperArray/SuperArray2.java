@@ -50,7 +50,7 @@ public class SuperArray2 {
      return data.indexOf;
    }
 
-   public String set(){
+   public String set(int index, String element){
     if (index == 0 || index > size) {
      return null;
     }
@@ -58,7 +58,7 @@ public class SuperArray2 {
       return null;
     }else{
       String s = data[index];
-      data[index]=
+      data[index]= element;
       return s;
     }
 
@@ -78,6 +78,8 @@ public class SuperArray2 {
         data.[x] = removeData[x]+1;
       return removeData;
       }
+
+
     }
   }
 }
