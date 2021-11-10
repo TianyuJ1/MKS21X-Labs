@@ -38,6 +38,7 @@ public class SuperArray  {
     return toString;
     }
 
+
     public String toStringDebug() {
       String toStringDebug = "[";
       for (int i = 0; i < data.length; i++){
@@ -51,38 +52,31 @@ public class SuperArray  {
 
 
 
-/*
- private int Debug += data[x];
-     Debug += ",";
-   }
-   Debug += data[SuperArray.length - 1];
-   Debug += "]";
-   return Debug;
- }
 
- public String get(int index) {
-   if (index == 0 || index > size) {
-     return "error";
-   }
+    public String get(int index) {
+      if (index == 0 || index > size) {
+        System.out.println("error");
+      }
 
-   if (data[index].equals(" ")) {
-     return null;
-   }else{
-     return data.indexOf;
-   }
+      if (data[index].equals("")) {
+        return null;
+      }else return data[index];
+    }
 
    public String set(int index, String element){
     if (index == 0 || index > size) {
+     System.out.println("error");
      return null;
     }
-    if (data[index].equals(" ")) {
+    if (data[index].equals("")) {
       return null;
     }else{
-      String s = data[index];
+      String original = data[index];
       data[index]= element;
-      return s;
+      return original;
     }
-
+  }
+/*
     SuperArray(int initialCapaticy) {
       data = new String[initialCapacity];
     }
