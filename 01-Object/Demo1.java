@@ -20,6 +20,8 @@ public class Demo1{
    
   }
   
+  	
+  
     public static double distance(Point P1, Point P2){
   	double dx = P2.getX() - P1.getX();
   	double dy = P2.getY() - P1.getY();

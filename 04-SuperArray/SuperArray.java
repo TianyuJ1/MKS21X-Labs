@@ -25,7 +25,7 @@ public class SuperArray  {
       public String toString() {
         String toString = "[";
           for (int x = 0; x < size; x++){
-              if (data[x] != null && data[x] +1 != null){
+              if (data[x] != null && data[x+1] != null){
                 toString += data[x];
                 toString += ",";
                 }else if (data[x] == null){
@@ -43,7 +43,9 @@ public class SuperArray  {
         String toStringDebug = "[";
           for (int i = 0; i < size; i++){
               toStringDebug += data[i];
-              toStringDebug += ", ";
+              if(i!=size-1){
+                toStringDebug += ", ";
+              }
           }
           toStringDebug += "]";
           return toStringDebug;
@@ -80,15 +82,15 @@ public class SuperArray  {
     SuperArray(int initialCapacity) {
       data=new String[initialCapacity];
     }
-/*
+
     private void resize() {
-      String[] resizeData = String[2 *data.length +1];
+      String[] resizeData = new String[2 *data.length +1];
       for (int x = 0; x < data.length; x++){
-      resizeData[x] = data[x];
-    }
+        resizeData[x] = data[x];
+        }
      data = resizeData;
    }
-
+/*
     public String remove(int index) {
       String removeData = data[index];
         for (int x = data[index]; x < data.length; x++){

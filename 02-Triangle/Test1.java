@@ -7,7 +7,13 @@ System.out.println(closeEnough(a, b));
 
 Point P1 = new Point(0,0);
 Point P2 = new Point(0,0);
+Point P3 = new Point(0,0);
 System.out.println(P1.equals(P2));
+
+Triangle t1 = new Triangle(0,0,0,1,1,0);
+System.out.println(area(0,0,0,1,1,0));
+
+
 }
 
 
