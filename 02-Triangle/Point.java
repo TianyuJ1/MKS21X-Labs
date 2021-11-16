@@ -45,7 +45,9 @@ public class Point{
 	public boolean equals(Point other){
 		boolean xSame;
 		boolean ySame;
-		
+		if (other == null){
+			return false;
+		}
 		if (this.getX() == 0 || other.getX() == 0){
 		
 		if (this.getX() == 0 && other.getX() == 0){

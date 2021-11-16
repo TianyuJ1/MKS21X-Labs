@@ -86,7 +86,7 @@ public class Triangle{
 *Make sure to use the formula: Area = sqrt ( s(s-a)(s-b)(s-c) )
 *where s= perimeter/2 , and a,b,c are the side lengths.
 */
-	public double area(Point v1, Point v2, Point v3){
+	public double area(){
 		double s = getPerimeter() * 0.5 ;
 		double a = v1.distanceTo(v2);
 		double b = v2.distanceTo(v3);
