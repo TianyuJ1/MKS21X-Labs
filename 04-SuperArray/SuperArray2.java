@@ -89,7 +89,13 @@ public class SuperArray2 {
           return true;
           remove(indexOf(target));
         }
+      }
+
+      public void add(int index, String value) {
+        if (index > data.length || index < 0) {
+
         }
+      }
       }
 
 
