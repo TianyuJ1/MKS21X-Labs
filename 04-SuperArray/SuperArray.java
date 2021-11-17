@@ -57,7 +57,7 @@ public class SuperArray  {
 
     public String get(int index) {
       if (index == 0 || index > size) {
-        System.out.println("error");
+        System.out.println("out of range");
       }
 
       if (data[index].equals("")) {
