@@ -27,6 +27,7 @@ public class SuperArray  {
           for (int x = 0; x < size; x++){
               if (data[x] != null && data[x+1] != null){
                 toString += data[x];
+
                 toString += ",";
                 }else if (data[x] == null){
                   toString += "";
