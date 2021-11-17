@@ -51,15 +51,7 @@ public class SuperArray  {
           	return toStringDebug;
         }	
 
-	public boolean remove(String target) {
-        	if (indexOf(target) == -1) {
-            		return false;
-        	}else {
-            		remove(indexOf(target));
-            		return true;
-        	}
-        }
-
+	
 
 
     	public String get(int index) {
@@ -91,13 +83,19 @@ public class SuperArray  {
 
     	private void resize() {
         	String [] resizing = java.util.Arrays.copyOf(data,data.length);
-        	data = new String[data.length+1];
-        	data = java.util.Arrays.copyOf(resizing,data.length);
-    	
-        	
-    		 data = resizeData;
+        	data = new String[2*data.length+1];
+        	for (int i = 0; i < size(); i ++){
+        		data[i] = resizing[i];
    	}
-
+	public int indexOf(String s) {
+    		for (int x = 0; x < data.length; x ++) {
+            		if (data[x].equals(s)) {
+                	return x;
+            		}	
+        	}
+        	return -1;
+        }
+        
 	public int lastIndexOf(String s) {
         	for (int x = data.length-1; x >=0; x --) {
             		if (data[x].equals(s)) {
@@ -123,23 +121,25 @@ public class SuperArray  {
         	size--;
         	return dataindex;
     	}
-    	public int indexOf(String s) {
-    		for (int x = 0; x < data.length; x ++) {
-            		if (data[x].equals(s)) {
-                	return x;
-            		}	
+    	
+    	public boolean remove(String target) {
+        	if (indexOf(target) == -1) {
+            		return false;
+        	}else {
+            		remove(indexOf(target));
+            		return true;
         	}
-        	return -1;
         }
-/*
->>>>>>> 5353f33176ad41cc3d00d5fe614a46582ea15199
-    public String remove(int index) {
-      String removeData = data[index];
-        for (int x = data[index]; x < data.length; x++){
-          data[x] = data[x + 1];
+	
+    	
+
+    	/*public String remove(int index) {
+      		String removeData = data[index];
+        	for (int x = data[index]; x < data.length; x++){
+          	data[x] = data[x + 1];
 
           return removeData;
-}
+}*/
 
 
 
