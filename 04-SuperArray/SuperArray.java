@@ -13,13 +13,12 @@ public class SuperArray  {
       	}
 
       	public boolean add(String s){
-        	for (int x = 0; x <= data.length-1; x++){
-            		if (data[x] == null) {
-                		data[x] = s;
-                		size ++;
-            		}
-        	}
-        	return true;
+      		if (size() == data.length){
+      			resize();
+      		}
+        	data[size] = s;
+        	size ++;
+        	return true;	
       	}	
 
       	public String toString() {
