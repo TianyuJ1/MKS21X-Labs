@@ -127,7 +127,7 @@ public class SuperArray  {
         	size--;
         	return dataindex;
     	}
-    public int indexOf(String s) {
+    	public int indexOf(String s) {
 /*
 >>>>>>> 5353f33176ad41cc3d00d5fe614a46582ea15199
     public String remove(int index) {
