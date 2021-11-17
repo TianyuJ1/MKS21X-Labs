@@ -94,11 +94,7 @@ public class SuperArray  {
         	data = new String[data.length+1];
         	data = java.util.Arrays.copyOf(resizing,data.length);
     	
-        	/*for (int x = 0; x < data.length; x ++) {
-            		if (data[x].equals(s)) {
-                	return x;
-            	}
-        	}*/
+        	
     		 data = resizeData;
    	}
 
@@ -128,6 +124,13 @@ public class SuperArray  {
         	return dataindex;
     	}
     	public int indexOf(String s) {
+    		for (int x = 0; x < data.length; x ++) {
+            		if (data[x].equals(s)) {
+                	return x;
+            		}	
+        	}
+        	return -1;
+        }
 /*
 >>>>>>> 5353f33176ad41cc3d00d5fe614a46582ea15199
     public String remove(int index) {
