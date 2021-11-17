@@ -52,7 +52,14 @@ public class SuperArray  {
           return toStringDebug;
         }
 
-
+	public boolean remove(String target) {
+        if (indexOf(target) == -1) {
+            return false;
+        }
+        else {
+            remove(indexOf(target));
+            return true;
+        }
 
 
 
@@ -91,7 +98,7 @@ public class SuperArray  {
         }
      data = resizeData;
    }
-/*
+
     public String remove(int index) {
       String removeData = data[index];
         for (int x = data[index]; x < data.length; x++){
@@ -99,24 +106,25 @@ public class SuperArray  {
 
           return removeData;
 }
-/*
-    private int size
 
-      public boolean remove(String target) {
-        for (int x = data[index]; x < data.length -1; x++){
-          if (data[index]== target){
-            remove()
-            return true;
-          }
-        }else{
-          return true;
-          remove(indexOf(target));
+public void add(int index,String value) {
+        //System.out.println(size + " " + data.length);
+        if (size() == data.length) {
+            resize();
+        //    System.out.println("error" /*+ size() + " " + data.length);
         }
+        String [] copy = Arrays.copyOfRange(data,index,data.length);
+        data[index] = value;
+        for (int x = index+1, y=0; x < data.length; x++, y++) {
+            data[x] = copy[y];
         }
-      }
+        size++;
+    }
 
-
-    }*/
+    
+    }
+}
 
 
 }
+    
