@@ -86,6 +86,7 @@ public class SuperArray  {
         	data = new String[2*data.length+1];
         	for (int i = 0; i < size(); i ++){
         		data[i] = resizing[i];
+   		}
    	}
 	public int indexOf(String s) {
     		for (int x = 0; x < data.length; x ++) {
@@ -106,19 +107,14 @@ public class SuperArray  {
     	}
    
     	public String remove(int index) {
-        	if (index > data.length || index < 0) {
+        	if (index > size()-1 || index < 0) {
             		System.out.println("error");
         	}
         	String dataindex = data[index];
-        	if (index == size()-1) {
-            		String[] copy = Arrays.copyOfRange(data, 0, size-2);
-            		data = java.util.Arrays.copyOfRange(copy,0,size);
-            		size--;
-            	return dataindex;
-        	}
-        	String[] copy = Arrays.copyOfRange(data, index+1, data.length-1);
-        	data = java.util.Arrays.copyOfRange(copy,0,data.length-1);
-        	size--;
+            	for (int i = index; i < size()-1; i ++){
+            		data[i] = data[i+1];
+            	}
+                size--;
         	return dataindex;
     	}
     	
