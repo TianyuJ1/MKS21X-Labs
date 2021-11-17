@@ -65,7 +65,7 @@ public class SuperArray  {
 
     public String get(int index) {
       if (index == 0 || index > size) {
-        System.out.println("error");
+        System.out.println("out of range");
       }
 
       if (data[index].equals("")) {
@@ -91,14 +91,39 @@ public class SuperArray  {
       data=new String[initialCapacity];
     }
 
-    private void resize() {
-      String[] resizeData = new String[2 *data.length +1];
-      for (int x = 0; x < data.length; x++){
-        resizeData[x] = data[x];
+        private void resize() {
+        String [] resizing = java.util.Arrays.copyOf(data,data.length);
+        data = new String[data.length+1];
+        data = java.util.Arrays.copyOf(resizing,data.length);
+    }
+    public String remove(int index) {
+        /*if (index > data.length || index < 0) {
+            System.out.println("error");
+        }*/
+
+        String dataindex = data[index];
+        if (index == size()-1) {
+            String[] copy = Arrays.copyOfRange(data, 0, size-2);
+            data = java.util.Arrays.copyOfRange(copy,0,size);
+            size--;
+            return dataindex;
+        }
+        String[] copy = Arrays.copyOfRange(data, index+1, data.length-1);
+        data = java.util.Arrays.copyOfRange(copy,0,data.length-1);
+        size--;
+        return dataindex;
+    }
+    public int indexOf(String s) {
+        for (int x = 0; x < data.length; x ++) {
+            if (data[x].equals(s)) {
+                return x;
+            }
         }
      data = resizeData;
    }
 
+/*
+>>>>>>> 5353f33176ad41cc3d00d5fe614a46582ea15199
     public String remove(int index) {
       String removeData = data[index];
         for (int x = data[index]; x < data.length; x++){
