@@ -53,15 +53,20 @@ public class SuperArray  {
 	
 
 
-    	public String get(int index) {
-      		if (index == 0 || index > size) {
-        		System.out.println("out of range");
-      		}
+    	public String get(int index) throws ArrayIndexOutOfBoundsException{
+      		if (index < 0 || index > size) {
+        		throw new ArrayIndexOutOfBoundsException("I went out of bounds, nothing's here!");
+        	}
+        	String dataIindex = data[index];
+        	for (int i = index; i < size()-1; i ++){
 		if (data[index].equals("")) {
-        		return null;
-      		}else return data[index];
-    	}
-
+        		dataIindex = null;
+      		}else dataIindex = data[index];
+    		}
+    		return dataIindex;
+    		
+	}
+	
    	public String set(int index, String element){
     		if (index == 0 || index > size) {
      			System.out.println("error");
@@ -105,14 +110,16 @@ public class SuperArray  {
         	return -1;
     	}
    
-    	public String remove(int index) {
+    	public String remove(int index) throws ArrayIndexOutOfBoundsException{
         	if (index > size()-1 || index < 0) {
-            		System.out.println("error");
-        	}
-        	String dataindex = data[index];
-            	for (int i = index; i < size()-1; i ++){
-            		data[i] = data[i+1];
+            		throw new ArrayIndexOutOfBoundsException("I went out of bounds");
             	}
+        	String dataindex = data[index];
+            
+    		for (int i = index; i < size()-1; i ++){
+    			data[i] = data[i+1];
+                }
+            	
                 size--;
         	return dataindex;
     	}
@@ -126,17 +133,9 @@ public class SuperArray  {
         	}
         }
 	
-    	
+    
 
-    	/*public String remove(int index) {
-      		String removeData = data[index];
-        	for (int x = data[index]; x < data.length; x++){
-          	data[x] = data[x + 1];
-
-          return removeData;
-}*/
-
-
+	
 
 }
     
