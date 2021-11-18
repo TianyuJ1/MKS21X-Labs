@@ -5,7 +5,7 @@ public static void main(String args[]){
   //displaying elements
   System.out.println(alist.toString());
   System.out.println(alist.toStringDebug());
-/*
+
   alist.add("Samus");
   //displaying elements
   System.out.println(alist);
@@ -17,6 +17,6 @@ public static void main(String args[]){
   //displaying elements
   System.out.println(alist);
   System.out.println(alist.toStringDebug());
-*/
+
 }
 }
