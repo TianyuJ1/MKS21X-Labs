@@ -21,10 +21,10 @@ public class SuperArray  {
         	return true;	
       	}	
 
-      	public String toString() {
+      	/*public String toString() {
         	String toString = "[";
           		for (int x = 0; x < size; x++){
-              			if (data[x] != null && data[x+1] != null){
+              			if (data[x] != null && data[x]+1 != null){
                 		toString += data[x];
 				toString += ",";
                 	}else if (data[x] == null){
@@ -35,22 +35,36 @@ public class SuperArray  {
           	}
 
         	return toString;
-    	}	
+    	}	*/
 
 
-      	public String toStringDebug() {
+      	public String toString() {
+         	String toString = "[";
+           		for (int i = 0; i < size; i++){
+              			toString += data[i];
+              			if(i!=size-1){
+                			toString += ", ";
+              			}
+          		}
+          	toString += "]";
+          	return toString;
+        }	
+
+	public String toStringDebug() {
          	String toStringDebug = "[";
            		for (int i = 0; i < size; i++){
               			toStringDebug += data[i];
-              			if(i!=size-1){
-                			toStringDebug += ", ";
+              			if(i == size-1){
+              				toStringDebug += ",";
               			}
-          		}
+              				
+                			toStringDebug += ", ";
+                			}
+                		}
+                	
           	toStringDebug += "]";
           	return toStringDebug;
         }	
-
-	
 
 
     	public String get(int index) throws ArrayIndexOutOfBoundsException{
@@ -69,7 +83,7 @@ public class SuperArray  {
 	
    	public String set(int index, String element) throws ArrayIndexOutOfBoundsException{
     		if (index < 0 || index > size) {
-    			throw new ArrayIndexOutOfBoundsExcepsettion("You can't go here, out of bounds!");
+    			throw new ArrayIndexOutOfBoundsException("You can't go here, out of bounds!");
     		}
      		String original = data[index];
     		for (int i = index; i < size()-1; i ++){
