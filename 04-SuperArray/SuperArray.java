@@ -67,18 +67,19 @@ public class SuperArray  {
     		
 	}
 	
-   	public String set(int index, String element){
-    		if (index == 0 || index > size) {
-     			System.out.println("error");
-     			return null;
+   	public String set(int index, String element) throws ArrayIndexOutOfBoundsException{
+    		if (index < 0 || index > size) {
+    			throw new ArrayIndexOutOfBoundsExcepsettion("You can't go here, out of bounds!");
     		}
+     		String original = data[index];
+    		for (int i = index; i < size()-1; i ++){
     		if (data[index].equals("")) {
       			return null;
     		}else{
-      			String original = data[index];
-      			data[index]= element;
-      			return original;
+    			return data[index];
     		}
+  		}
+  	return original;
   	}
 
     	SuperArray(int initialCapacity) {
