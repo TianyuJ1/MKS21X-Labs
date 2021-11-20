@@ -141,7 +141,7 @@ public class SuperArray  {
     	
     	public boolean remove(String target) {
         	if (indexOf(target) == -1) {
-            		return false;
+            		throw new ArrayIndexOutOfBoundsException("false");
         	}else {
             		remove(indexOf(target));
             		return true;
