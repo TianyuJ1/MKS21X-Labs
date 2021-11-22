@@ -10,5 +10,9 @@ import java.util.ArrayList;
           System.out.println("Enter a non negative number. A negative number will end the program:" + i);
         }
         double mean = sum / (size() -1);
+        System.out.println("Mean: " + mean);
         
+        System.out.println("Min value" + double.min(data[x]);
+        System.out.println("Max value" + double.max(data[x]);
+                           }
           
