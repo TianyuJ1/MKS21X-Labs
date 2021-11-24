@@ -20,23 +20,34 @@ public class Triangles {
           System.out.println("file not found");
       }
 
-      arr TriangleArray = input.nextLine()
-
-      public int ValidTriangles(int x, int y, int z){
+      public static int ValidTriangles(File data){
         int ValidTs = 0;
-        for (int = 0; i < data.size(); i ++){
-          if (x + y > z || x + z > y || y + z > x){
+        try{
+          File file = new File("data");
+          Scanner input = new Scanner(file);
+          if(input.hasNextInt() == true){
+            int x = input.nextInt();
+            int y = input.nextInt();
+            int z = input.nextInt();
+
+          if ((x + y) > z || (x + z) > y || (y + z) > x){
             ValidTs += 1;
           }else{
             System.out.println("invalid");
           }
         }
       }
-      private String[] data;
-      	private int size;
+      Input.close();
+      catch{(FileNotFoundException ex)
+        System.out.println("file not found");
+    }
+    return ValidTs;
+      }
 
-      public int ValidColumns(int a, int b, int c){
+
+      public int ValidColumns(File data){
         int ValidCs = 0;
+
         /*
         for (int = 0; i < data.size(); i ++){
           if (a + b > z || a + c > b || b + c > a){
