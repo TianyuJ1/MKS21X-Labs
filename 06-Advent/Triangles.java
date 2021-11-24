@@ -19,10 +19,35 @@ public class Triangles {
           //File not found
           System.out.println("file not found");
       }
+
+      arr TriangleArray = input.nextLine()
+
       public int ValidTriangles(int x, int y, int z){
-        side1 = x;
-        side2 = y;
-        side3 = z;
+        int ValidTs = 0;
+        for (int = 0; i < data.size(); i ++){
+          if (x + y > z || x + z > y || y + z > x){
+            ValidTs += 1;
+          }else{
+            System.out.println("invalid");
+          }
+        }
+      }
+      private String[] data;
+      	private int size;
+
+      public int ValidColumns(int a, int b, int c){
+        int ValidCs = 0;
+        /*
+        for (int = 0; i < data.size(); i ++){
+          if (a + b > z || a + c > b || b + c > a){
+            ValidTs += 1;
+          }else{
+            System.out.println("invalid");
+          }
+        }*/
+      }
+
+
       }
 
   }
