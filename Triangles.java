@@ -24,4 +24,20 @@
         int x = input.nextInt();
         int y = input.nextInt();
         int z = input.nextInt();
+       
+       if(x + y >= z || x + z >= y || y + z >= x){
+          ValidTs ++;
+        }
+      
+      Input.close();
+    }catch(FileNotFoundException e){
+      System.out.println("file not found");
+      }
+      return ValidTs;
+    }
+    
+    
+        
+}
+       
         
