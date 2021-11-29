@@ -18,8 +18,8 @@ public class SuperArray  {
       		}
         	data[size] = s;
         	size ++;
-        	return true;	
-      	}	
+        	return true;
+      	}
 
       	/*public String toString() {
         	String toString = "[";
@@ -48,7 +48,7 @@ public class SuperArray  {
           		}
           	toString += "]";
           	return toString;
-        }	
+        }
 
 	public String toStringDebug() {
          	String toStringDebug = "[";
@@ -57,14 +57,14 @@ public class SuperArray  {
               			if(i == size-1){
               				toStringDebug += ",";
               			}
-              				
+              				if(i != size-1){
                 			toStringDebug += ", ";
                 			}
                 		}
-                	
+
           	toStringDebug += "]";
           	return toStringDebug;
-        }	
+        }
 
 
     	public String get(int index) throws ArrayIndexOutOfBoundsException{
@@ -78,9 +78,9 @@ public class SuperArray  {
       		}else dataIindex = data[index];
     		}
     		return dataIindex;
-    		
+
 	}
-	
+
    	public String set(int index, String element) throws ArrayIndexOutOfBoundsException{
     		if (index < 0 || index > size) {
     			throw new ArrayIndexOutOfBoundsException("You can't go here, out of bounds!");
@@ -111,11 +111,11 @@ public class SuperArray  {
     		for (int x = 0; x < data.length; x ++) {
             		if (data[x].equals(s)) {
                 	return x;
-            		}	
+            		}
         	}
         	return -1;
         }
-        
+
 	public int lastIndexOf(String s) {
         	for (int x = data.length-1; x >=0; x --) {
             		if (data[x].equals(s)) {
@@ -124,21 +124,24 @@ public class SuperArray  {
         	}
         	return -1;
     	}
-   
+   	public Trianles() {
+      		data = new String[10];
+      		size = 0;
+           	}
     	public String remove(int index) throws ArrayIndexOutOfBoundsException{
         	if (index > size()-1 || index < 0) {
             		throw new ArrayIndexOutOfBoundsException("I went out of bounds");
             	}
         	String dataindex = data[index];
-            
+
     		for (int i = index; i < size()-1; i ++){
     			data[i] = data[i+1];
                 }
-            	
+
                 size--;
         	return dataindex;
     	}
-    	
+
     	public boolean remove(String target) {
         	if (indexOf(target) == -1) {
             		return false;
@@ -147,10 +150,9 @@ public class SuperArray  {
             		return true;
         	}
         }
-	
-    
 
-	
+
+
+
 
 }
-    
