@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class Triangles {
-    public static void main(String[] args)/* throws FileNotFoundException*/{
+    public static void main(String[] args){
       try {
           File file = new File("data");
           Scanner input = new Scanner(file);
@@ -15,11 +15,12 @@ public class Triangles {
           }
           input.close();
 
-      } catch (FileNotFoundException ex) {
+       } catch (FileNotFoundException ex){ 
           //File not found
           System.out.println("file not found");
+      	}
       }
-
+      
       public static int ValidTriangles(File data){
         int ValidTs = 0;
         try{
@@ -36,9 +37,9 @@ public class Triangles {
             System.out.println("invalid");
           }
         }
-      }
-      Input.close();
-      catch{(FileNotFoundException ex)
+      
+      input.close();
+      } catch(FileNotFoundException e){
         System.out.println("file not found");
     }
     return ValidTs;
@@ -46,10 +47,11 @@ public class Triangles {
 
 
       public int ValidColumns(File data){
-        int ValidCs = 0;
+        int ValidColumn = 0;
         try{
           File file = new File("data");
           Scanner input = new Scanner(file);
+          for (int i =0; i < data.length(); i ++){
           if(input.hasNextInt() == true){
             int c1 = input.nextInt();
             int c2 = input.nextInt();
@@ -61,20 +63,22 @@ public class Triangles {
             int c8 = input.nextInt();
             int c9 = input.nextInt();
 
-          if ((c1 + c2) > c3 || (c2 + c3) > c1 || (c1 + c3) > c2)
-          && if ((c4 + c5) > c6 || (c4 + c6) > c5 || (c5 + c6) > c4)
-          && if ((c7 + c8) > c9 || (c8 + c9) > c7 || (c7 + c9) > c8){
-            Valids += 1;
-          }else{
-            System.out.println("invalid");
-          }
-        }
+            if (((c1 + c2) > c3 || (c2 + c3) > c1 || (c1 + c3) > c2) && ((c4 + c5) > c6 || (c4 + c6) > c5 || (c5 + c6) > c4) && ((c7 + c8) > c9 || (c8 + c9) > c7 || (c7 + c9) > c8)){
+            		ValidColumn += 1;
+            		System.out.println(ValidColumn);
+          	}else{
+            		System.out.println("invalid");
+          	}
+        
+      	 }
       }
-      Input.close();
-      catch{(FileNotFoundException ex)
+      input.close();
+      } catch(FileNotFoundException ex){
         System.out.println("file not found");
     }
-    return ValidCs;
+    return ValidColumn;
+    /*System.out.println(ValidColumn);*/
+    }
 
         /*
         for (int = 0; i < data.size(); i ++){
@@ -85,9 +89,10 @@ public class Triangles {
           }
         }*/
       }
+      
 
 
-      }
+      
 
-  }
-}
+  
+
