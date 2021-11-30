@@ -13,6 +13,8 @@ public class Triangles {
               System.out.println(lineNum + ":  " + line);
               lineNum++;
           }
+          System.out.println("Valid Triangles: " + ValidTriangles(file));
+          System.out.println("Valid columns: " + ValidColumns(file));
           input.close();
 
        } catch (FileNotFoundException ex){ 
@@ -23,18 +25,18 @@ public class Triangles {
       
       public static int ValidTriangles(File data){
         int ValidTs = 0;
+        
         try{
           File file = new File("data");
           Scanner input = new Scanner(file);
-          if(input.hasNextInt() == true){
+          while (input.hasNextInt()){
             int x = input.nextInt();
             int y = input.nextInt();
             int z = input.nextInt();
 
-          if ((x + y) > z || (x + z) > y || (y + z) > x){
+          if ((x + y) > z && (x + z) > y && (y + z) > x){
             ValidTs += 1;
-          }else{
-            System.out.println("invalid");
+       
           }
         }
       
@@ -46,13 +48,13 @@ public class Triangles {
       }
 
 
-      public int ValidColumns(File data){
+      public static int ValidColumns(File data){
         int ValidColumn = 0;
         try{
           File file = new File("data");
           Scanner input = new Scanner(file);
           for (int i =0; i < data.length(); i ++){
-          if(input.hasNextInt() == true){
+          while(input.hasNextInt()){
             int c1 = input.nextInt();
             int c2 = input.nextInt();
             int c3 = input.nextInt();
@@ -63,13 +65,16 @@ public class Triangles {
             int c8 = input.nextInt();
             int c9 = input.nextInt();
 
-            if (((c1 + c2) > c3 || (c2 + c3) > c1 || (c1 + c3) > c2) && ((c4 + c5) > c6 || (c4 + c6) > c5 || (c5 + c6) > c4) && ((c7 + c8) > c9 || (c8 + c9) > c7 || (c7 + c9) > c8)){
-            		ValidColumn += 1;
-            		System.out.println(ValidColumn);
-          	}else{
-            		System.out.println("invalid");
+            if ((c1 + c4) > c7 && (c1 + c7) > c4 && (c4 + c7) > c1){
+            		ValidColumn += 1;	
           	}
-        
+            if ((c2 + c5) > c8 && (c2 + c8) > c5 && (c5 + c8) > c2){
+            		ValidColumn += 1;	
+          	}
+            if ((c3 + c6) > c9 && (c3 + c9) > c6 && (c6 + c9) > c3){
+            		ValidColumn += 1;	
+          	}
+          	
       	 }
       }
       input.close();
