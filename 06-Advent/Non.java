@@ -28,3 +28,20 @@ public class Non {
         int vowel = 0;
         int repeat = 0;
         int naughty = 0;
+        while(input.hasNextLine()){
+          String k = input.hasNextline();
+          if (k == vowelLetter){
+            vowel += 1;  
+          }
+          if (k == input.charAt(k + 1)){
+            repeat += 1;
+          }
+          if (k == naughtyLetter){
+            naughty += 1;
+          }
+          if (vowel >= 3 && repeat >= 2 && naughty == 0){
+           return input.nextLine();
+          }
+        }
+      }
+        
