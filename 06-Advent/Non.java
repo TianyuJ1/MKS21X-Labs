@@ -7,6 +7,9 @@ public class Non {
           File file = new File("data set2");
           Scanner input = new Scanner(file);
           int lineNum = 0;
+      }
+                  System.out.println("nice string " + NiceString(file));
+
 
           while (input.hasNextLine()) {
               String line = input.nextLine();
