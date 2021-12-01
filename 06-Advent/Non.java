@@ -21,3 +21,10 @@ public class Non {
           System.out.println("file not found");
       	}
       }
+
+      public static String NiceString(File data){
+        String vowelLetter = new[] { 'a', 'e', 'i', 'o', 'u' };
+        String naughtyLetter = new[] {'ab', 'cd','pq','xy'}
+        int vowel = 0;
+        int repeat = 0;
+        int naughty = 0;
