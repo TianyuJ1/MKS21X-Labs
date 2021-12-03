@@ -77,7 +77,7 @@ public class Triangles {
           	
       	 }
       }
-      input.close();
+      input.close()
       } catch(FileNotFoundException ex){
         System.out.println("file not found");
     }
