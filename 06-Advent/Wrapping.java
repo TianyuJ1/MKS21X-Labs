@@ -4,16 +4,15 @@ import java.util.Scanner;
 public class Wrapping {
 public static void main(String[] args){
 /*try{*/
- /*File file = new File(args[0]);
+ File file = new File("input.txt");
           Scanner input = new Scanner(file);
           int lineNum = 0;
-
           while (input.hasNextLine()) {
               String line = input.nextLine();
               System.out.println(lineNum + ":  " + line);
               lineNum++;
-          }*/
-          System.out.println(slacks(args[0]));
+          }
+          System.out.println(slacks("input.txt"));
 /* }
 catch(FileNotFoundException e){
         System.out.println("file not found");
@@ -29,8 +28,8 @@ try {
           while (input.hasNextLine()){
           String line = input.nextLine();
           Scanner s = new Scanner(line);
-          int firstX = line.indexOf("x");
-          int secondX = line.lastIndexOf("x");
+          String firstX = line.indexOf("x");
+          String secondX = line.lastIndexOf("x");
           
           String lengthString = line.substring(0, firstX);
           int length = Integer.parseInt(lengthString);
@@ -38,14 +37,14 @@ try {
           String widthString = line.substring(firstX, secondX);
           int width = Integer.parseInt(widthString);
           
-          String heightString = line.substring(secondX, line.size());
+          String heightString = line.substring(secondX, line.lastIndexOf());
           int height = Integer.parseInt(heightString);
           
-           WrapPaper = ((2 * length * height) + (2 * length * width) + (2 * height * width));\}
+           WrapPaper = ((2 * length * height) + (2 * length * width) + (2 * height * width));}
 } catch(FileNotFoundException e){
         System.out.println("file not found");
     }
-    return slack;
+    return WrapPaper;
     }
            
            
@@ -53,14 +52,13 @@ public static int slacks(String data){
 int slack = 0;
 
 try {
-
-          File file = new File(data);
+        File file = new File(data);
           Scanner input = new Scanner(file);
           while (input.hasNextLine()){
           String line = input.nextLine();
           Scanner s = new Scanner(line);
-          int firstX = line.indexOf("x");
-          int secondX = line.lastIndexOf("x");
+          String firstX = line.indexOf("x");
+          String secondX = line.lastIndexOf("x");
           
           String lengthString = line.substring(0, firstX);
           int length = Integer.parseInt(lengthString);
@@ -68,7 +66,7 @@ try {
           String widthString = line.substring(firstX, secondX);
           int width = Integer.parseInt(widthString);
           
-          String heightString = line.substring(secondX, line.size());
+          String heightString = line.substring(secondX, line.length()-1);
           int height = Integer.parseInt(heightString);
           
           int max = 0;
