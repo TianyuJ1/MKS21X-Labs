@@ -12,7 +12,7 @@ public static void main(String[] args){
               System.out.println(lineNum + ":  " + line);
               lineNum++;
           }
-          System.out.println(slacks("input.txt"));
+          System.out.println(slacks(args[0]));
 /* }
 catch(FileNotFoundException e){
         System.out.println("file not found");
