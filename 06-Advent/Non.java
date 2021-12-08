@@ -12,17 +12,17 @@ public class Non
 
     int mode = Integer.parseInt(args[1]);
           if (mode == 1){
-          System.out.println(NiceString(file));
+          System.out.println(NiceString(args[0]));
           }
           if (mode == 2){
-          System.out.println(veryNiceString(file));
+          System.out.println(veryNiceString(args[0]));
           }
     }catch(FileNotFoundException ex){
     System.out.println("File not found");
     }
     }
 
-   public static int NiceString(File data)throws FileNotFoundException{
+   public static int NiceString(String data)throws FileNotFoundException{
 
         Scanner input = new Scanner(data);
         int counter = 0;
@@ -51,49 +51,40 @@ if((vowels >= 3) && (repeats == 1) && (found == 0)){
   counter++;
 
 
-
-
-
   }
   }
-  input.close();
+
  return counter;
 
  }
 
- public static int veryNiceString(File file){
+ public static int veryNiceString(String file){
   int counter = 0;
   boolean oneLetter = false;
   boolean pairLetters = false;
-  try{
+ 
   Scanner s = new Scanner(file);
   while (s.hasNextLine()){
-  String line = s.nextLine();
-  for (int i = 0; i < line.length()-2; i ++){
-  if (line.substring(i, i +1).equals(line.substring(i+2, i+3))){
-  oneLetter = true;
-  }
-  String pair = line.substring(i, i+2);
-
-  if (line.indexOf(pair) != line.lastIndexOf(pair) && line.lastIndexOf(pair) != line.indexOf(pair) +1){
-  pairLetters = true;
-
-  }
-  
-  if(pairLetters && oneLetter){
-  counter ++;
-  }
-  }
-  }
-  s.close();
-  
-  
-
-  }catch(FileNotFoundException ex){
-    System.out.println("File not found");
-    return 0;
+   String line = s.nextLine();
+    for (int i = 0; i < line.length()-2; i ++){
+    	if (line.substring(i, i +1).equals(line.substring(i+2, i+3))){
+    	 oneLetter = true;
     }
-return counter;
+    String pair = line.substring(i, i+2);
+   if ((line.indexOf(pair) != line.lastIndexOf(pair)) && (line.lastIndexOf(pair) != line.indexOf(pair) +1)){
+    pairLetters = true;
+
+   }
+  
+   if(pairLetters && oneLetter){
+    counter ++;
+   }
+  
+  }
+  
+ }
+ return counter;
+}
 
  }
- }
+ 
