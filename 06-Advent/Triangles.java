@@ -8,24 +8,29 @@ public class Triangles {
           Scanner input = new Scanner(file);
           int lineNum = 0;
 
-          while (input.hasNextLine()) {
+          /*while (input.hasNextLine()) {
               String line = input.nextLine();
               System.out.println(lineNum + ":  " + line);
               lineNum++;
+          }*/
+          int mode = Integer.parseInt(args[1]);
+          if (mode == 1){
+          System.out.println(ValidTriangles(file));
           }
-          System.out.println("Valid Triangles: " + ValidTriangles(file));
-          System.out.println("Valid columns: " + ValidColumns(file));
+          if (mode == 2){
+          System.out.println(ValidColumns(file));
+          }
           input.close();
 
-       } catch (FileNotFoundException ex){ 
+       } catch (FileNotFoundException ex){
           //File not found
           System.out.println("file not found");
-      	}
       }
-      
+      }
+
       public static int ValidTriangles(File data){
         int ValidTs = 0;
-        
+
         try{
           File file = new File("data");
           Scanner input = new Scanner(file);
@@ -36,10 +41,10 @@ public class Triangles {
 
           if ((x + y) > z && (x + z) > y && (y + z) > x){
             ValidTs += 1;
-       
+
           }
         }
-      
+
       input.close();
       } catch(FileNotFoundException e){
         System.out.println("file not found");
@@ -66,16 +71,16 @@ public class Triangles {
             int c9 = input.nextInt();
 
             if ((c1 + c4) > c7 && (c1 + c7) > c4 && (c4 + c7) > c1){
-            		ValidColumn += 1;	
-          	}
+            ValidColumn += 1;
+          }
             if ((c2 + c5) > c8 && (c2 + c8) > c5 && (c5 + c8) > c2){
-            		ValidColumn += 1;	
-          	}
+            ValidColumn += 1;
+          }
             if ((c3 + c6) > c9 && (c3 + c9) > c6 && (c6 + c9) > c3){
-            		ValidColumn += 1;	
-          	}
-          	
-      	 }
+            ValidColumn += 1;
+          }
+
+      }
       }
       input.close();
       } catch(FileNotFoundException ex){
@@ -94,10 +99,3 @@ public class Triangles {
           }
         }*/
       }
-      
-
-
-      
-
-  
-
