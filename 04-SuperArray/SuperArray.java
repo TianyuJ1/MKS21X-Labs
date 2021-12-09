@@ -1,158 +1,158 @@
-public class SuperArray  {
+public class SuperArray {
+    private String[] data;
+    private int size;
+    private static int DEFAULT_CAPACITY = 10;
 
-	private String[] data;
-  	private int size;
-
-      	public SuperArray() {
-  		data = new String[10];
-  		size = 0;
-       	}
-
-      	public int size() {
-        	return size;
-      	}
-
-      	public boolean add(String s){
-      		if (size() == data.length){
-      			resize();
-      		}
-        	data[size] = s;
-        	size ++;
-        	return true;
-      	}
-
-      	/*public String toString() {
-        	String toString = "[";
-          		for (int x = 0; x < size; x++){
-              			if (data[x] != null && data[x]+1 != null){
-                		toString += data[x];
-				toString += ",";
-                	}else if (data[x] == null){
-                  		toString += "";
-                  	}
-              	toString += "]";
-              	return toString;
-          	}
-
-        	return toString;
-    	}	*/
-
-
-      	public String toString() {
-         	String toString = "[";
-           		for (int i = 0; i < size; i++){
-              			toString += data[i];
-              			if(i!=size-1){
-                			toString += ", ";
-              			}
-          		}
-          	toString += "]";
-          	return toString;
+    public SuperArray() {
+        this.data = new String[DEFAULT_CAPACITY];
+    }
+    public SuperArray(int initialCapacity){
+        if(initialCapacity <= 0){
+            throw new IllegalArgumentException("Capcacity < 0"+ initialCapacity);
         }
+        data = new String[initialCapacity];
+        size = 0;
+    }
 
-	public String toStringDebug() {
-         	String toStringDebug = "[";
-           		for (int i = 0; i < size; i++){
-              			toStringDebug += data[i];
-              			if(i == size-1){
-              				toStringDebug += ",";
-              			}
-              				if(i != size-1){
-                			toStringDebug += ", ";
-                			}
-                		}
-
-          	toStringDebug += "]";
-          	return toStringDebug;
+    public boolean add(String element){
+        if(size == data.length){
+            resize(data.length * 2 + 1);
         }
-
-
-    	public String get(int index) throws ArrayIndexOutOfBoundsException{
-      		if (index < 0 || index > size) {
-        		throw new ArrayIndexOutOfBoundsException("I went out of bounds, nothing's here!");
-        	}
-        	String dataIindex = data[index];
-        	for (int i = index; i < size()-1; i ++){
-		if (data[index].equals("")) {
-        		dataIindex = null;
-      		}else dataIindex = data[index];
-    		}
-    		return dataIindex;
-
-	}
-
-   	public String set(int index, String element) throws ArrayIndexOutOfBoundsException{
-    		if (index < 0 || index > size) {
-    			throw new ArrayIndexOutOfBoundsException("You can't go here, out of bounds!");
-    		}
-     		String original = data[index];
-    		for (int i = index; i < size()-1; i ++){
-    		if (data[index].equals("")) {
-      			return null;
-    		}else{
-    			return data[index];
-    		}
-  		}
-  	return original;
-  	}
-
-    	SuperArray(int initialCapacity) {
-      		data=new String[initialCapacity];
-    	}
-
-    	private void resize() {
-        	String [] resizing = java.util.Arrays.copyOf(data,data.length);
-        	data = new String[2*data.length+1];
-        	for (int i = 0; i < size(); i ++){
-        		data[i] = resizing[i];
-   		}
-   	}
-	public int indexOf(String s) {
-    		for (int x = 0; x < data.length; x ++) {
-            		if (data[x].equals(s)) {
-                	return x;
-            		}
-        	}
-        	return -1;
+        for(int i = size;i >size;i--){
+            data[i] = data[i - 1];
         }
-
-	public int lastIndexOf(String s) {
-        	for (int x = data.length-1; x >=0; x --) {
-            		if (data[x].equals(s)) {
-                	return x;
-            	}
-        	}
-        	return -1;
-    	}
-   	public Trianles() {
-      		data = new String[10];
-      		size = 0;
-           	}
-    	public String remove(int index) throws ArrayIndexOutOfBoundsException{
-        	if (index > size()-1 || index < 0) {
-            		throw new ArrayIndexOutOfBoundsException("I went out of bounds");
-            	}
-        	String dataindex = data[index];
-
-    		for (int i = index; i < size()-1; i ++){
-    			data[i] = data[i+1];
+        data[size] = element;
+        size++;
+        return true;
+    }
+    public int size() {
+        return size;
+    }
+    public boolean isEmpty(){
+        return size == 0;
+    }
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        if(isEmpty()){
+            sb.append(']');
+        }
+        else{
+            for(int i = 0;i < size;i++){
+                sb.append(data[i]);
+                if(i != size - 1){
+                    sb.append(',');
                 }
-
-                size--;
-        	return dataindex;
-    	}
-
-    	public boolean remove(String target) {
-        	if (indexOf(target) == -1) {
-            		throw new ArrayIndexOutOfBoundsException("false");
-        	}else {
-            		remove(indexOf(target));
-            		return true;
-        	}
+                else{
+                    sb.append(']');
+                }
+            }
         }
+        return sb.toString();
+    }
+    public String toStringDebug(){
+        StringBuilder sb = new StringBuilder();
+        sb.append('[');
+        for(int i = 0;i < data.length;i++){
+            sb.append(data[i]);
+            if(i != data.length - 1){
+                sb.append(',');
+            }
+        }
+        sb.append(']');
+        return sb.toString();
+    }
+    public String get(int index){
+        if(index < 0 || index >= size){
+            throw new IndexOutOfBoundsException("Index out of range: "+index);
+        }
+        return data[index];
+    }
+    public String set(int index,String element){
+        if(index < 0 || index >= size){
+            throw new IndexOutOfBoundsException("Index out of range: "+index);
+        }
+        String res = data[index];
+        data[index] = element;
+        return res;
+    }
+
+    private void resize(int newLength) {
+        String[] newData = new String[newLength];
+        for(int i = 0;i < size;i++){
+            newData[i] = data[i];
+        }
+        data = newData;
+    }
+    public int indexOf(String element){
+        for(int i = 0;i < size;i++){
+            if(data[i].equals(element)){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public int lastIndexOf(String element){
+        if (size == 0) return -1;
+        for(int i = size-1;i >= 0;i--){
+            if(data[i].equals(element)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void add(int index,String value){
+        if(index < 0 || index > size){
+            throw new IndexOutOfBoundsException("Index out of range: "+index);
+        }
+        if(size == data.length){
+            resize(data.length * 2 + 1);
+        }
+        for(int i = size;i >index;i--){
+            data[i] = data[i - 1];
+        }
+        data[index] = value;
+        size++;
+    }
+    public String remove(int index){
+        if(index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of range: "+index);
+        }
+        String res = data[index];
+        for(int i = index;i <= size - 2;i++){
+            data[i] = data[i + 1];
+        }
+        size--;
+        return res;
+    }
+    public boolean remove(String element){
+        int index = 0;
+        while((index = indexOf(element)) != -1) {
+            remove(index);
+            return true;
+        }
+        return false;
+    }
 
 
+    public static void main(String[] args) {
+        SuperArray alist = new SuperArray();
+        alist.add("a");
 
+        System.out.println(alist);
+        System.out.println(alist.toStringDebug());
 
+        alist.add("b");
 
+        System.out.println(alist);
+        System.out.println(alist.toStringDebug());
+
+        alist.add("Ash");
+        alist.add("c");
+        alist.add("d");
+
+        System.out.println(alist);
+        System.out.println(alist.toStringDebug());
+    }
 }
