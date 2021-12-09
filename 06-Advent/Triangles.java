@@ -4,17 +4,24 @@ import java.util.Scanner;
 public class Triangles {
     public static void main(String[] args){
       try {
-          File file = new File("data");
+           File file = new File(args[0]);
           Scanner input = new Scanner(file);
           int lineNum = 0;
 
-          /*while (input.hasNextLine()) {
+          /*while (input.has NextLine()) {
               String line = input.nextLine();
               System.out.println(lineNum + ":  " + line);
               lineNum++;
           }*/
-          System.out.println("Valid Triangles: " + ValidTriangles(file));
-          System.out.println("Valid columns: " + ValidColumns(file));
+          int mode = Integer.parseInt(args[1]);
+          if (mode == 1){
+          	System.out.println(ValidTriangles(args[0]));
+          }
+          if (mode == 2){
+          	System.out.println(ValidColumns(args[0])); 
+          }
+          
+          
           input.close();
 
        } catch (FileNotFoundException ex){
@@ -23,11 +30,11 @@ public class Triangles {
       	}
       }
 
-      public static int ValidTriangles(File data){
+      public static int ValidTriangles(String data){
         int ValidTs = 0;
 
         try{
-          File file = new File("data");
+          File file = new File(data);
           Scanner input = new Scanner(file);
           while (input.hasNextInt()){
             int x = input.nextInt();
@@ -48,13 +55,13 @@ public class Triangles {
       }
 
 
-      public static int ValidColumns(File data){
+      public static int ValidColumns(String data){
         int ValidColumn = 0;
         try{
-          File file = new File("data");
+          File file = new File(data);
           Scanner input = new Scanner(file);
-          for (int i =0; i < data.length(); i ++){
-          while(input.hasNextInt()){
+          while (input.hasNextInt()){
+          
             int c1 = input.nextInt();
             int c2 = input.nextInt();
             int c3 = input.nextInt();
@@ -75,7 +82,7 @@ public class Triangles {
             		ValidColumn += 1;
           	}
 
-      	 }
+      	 
       }
       input.close();
       } catch(FileNotFoundException ex){
