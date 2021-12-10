@@ -2,7 +2,26 @@ public class SuperArray {
     private String[] data;
     private int size;
     private static int DEFAULT_CAPACITY = 10;
+    public static void main(String[] args) {
+        SuperArray alist = new SuperArray();
+        alist.add("a");
 
+        System.out.println(alist);
+        System.out.println(alist.toStringDebug());
+
+        alist.add("b");
+
+        System.out.println(alist);
+        System.out.println(alist.toStringDebug());
+
+        alist.add("Ash");
+        alist.add("c");
+        alist.add("d");
+
+        System.out.println(alist);
+        System.out.println(alist.toStringDebug());
+    }
+   
     public SuperArray() {
         this.data = new String[DEFAULT_CAPACITY];
     }
@@ -136,23 +155,5 @@ public class SuperArray {
     }
 
 
-    public static void main(String[] args) {
-        SuperArray alist = new SuperArray();
-        alist.add("a");
 
-        System.out.println(alist);
-        System.out.println(alist.toStringDebug());
-
-        alist.add("b");
-
-        System.out.println(alist);
-        System.out.println(alist.toStringDebug());
-
-        alist.add("Ash");
-        alist.add("c");
-        alist.add("d");
-
-        System.out.println(alist);
-        System.out.println(alist.toStringDebug());
-    }
 }
