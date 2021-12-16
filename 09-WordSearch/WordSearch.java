@@ -6,14 +6,21 @@ public class WordSearch{
   private Random rng;
   int seed;
 
+  public static void main(String []args){
+    addAllWords(args[0]);
+  }
   //assume a rectangular grid
-  private void addAllWords(String filename){
+  private static void addAllWords(String filename){
     ArrayList<String> wordsToAdd = loadWordsFromFile(filename);
-    for for(int r = 0; r < grid.length; r++){
-      for(int c = 0; c < grid[r].length; c++){
-        filename = 
-
     //You are writing this
+     for(int r = 0; r < grid.length; r++){
+      for(int c = 0; c < grid[r].length; c++){
+        rng = new Random();
+        int storage = rng.nextInt(wordsToAdd.size());
+        System.out.println(storage);
+      }
+     }
+   
 
   }
 
@@ -73,7 +80,15 @@ public class WordSearch{
     if(dr == 0 && dc == 0){
       return false;
     }
-    //check endpoints of word
+   }
+  }
+    //check   public main
+    //private char[][]data;
+
+    /**Initialize the grid to the size specified
+     *and fill all of the positions with '_'
+     *@param rows is the starting height of the WordSearch
+     *@param cols is the starting width of the WordSearchendpoints of word
     if(!inBounds(row,col) || !inBounds(row + dr * (word.length() - 1), col + dc * (word.length() - 1 ))){
       return false;
     }
