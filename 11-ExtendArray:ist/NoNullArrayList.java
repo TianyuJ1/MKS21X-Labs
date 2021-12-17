@@ -13,13 +13,11 @@ public class NoNullArrayList<T> extends ArrayList<T> {
   }
 
   public addAll(int index, T value){
-    try{
-      value = "null"
-      return super.addAll(index, value);
-      }
-    }catch(illegalArgumentException e){
+      if (value == null)
+    }throw new(illegalArgumentException e){
       System.out.println("error");
     }
+    return super.addAll(index, value);
   }
 
   public boolean add(T value) {
