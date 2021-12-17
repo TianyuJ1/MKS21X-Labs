@@ -21,10 +21,9 @@ public class NoNullArrayList<T> extends ArrayList<T> {
   }
 
   public boolean add(T value) {
-   try{
     if (val == null) {
-    return true;}
-   }catch(illegalArgumentException ex){
+    return true;
+  }throw new(illegalArgumentException ex){
     System.out.println("error");
     }
    return super.add(value);
