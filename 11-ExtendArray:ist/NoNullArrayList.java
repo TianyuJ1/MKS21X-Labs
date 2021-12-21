@@ -30,7 +30,6 @@ public class NoNullArrayList<T> extends ArrayList<T> {
   }
 
   public void add(int index, T value) {
-   try{
     if (val == null) {
       return super.add(index, value);
     }throw new(illegalArgumentException ex){
