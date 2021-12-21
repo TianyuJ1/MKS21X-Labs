@@ -33,7 +33,7 @@ public class NoNullArrayList<T> extends ArrayList<T> {
    try{
     if (val == null) {
       return super.add(index, value);
-    }catch(illegalArgumentException ex){
+    }throw new(illegalArgumentException ex){
       System.out.println("error");
     }
   }
