@@ -1,3 +1,5 @@
+import java.lang.Math;
+import java.util.*;
 public class Text{
   /*Base colors*/
   private static int BLACK = 30;
@@ -62,7 +64,7 @@ public class Text{
     hideCursor();
     clear();
 
-    /*go(1,1);
+    /*go(1,1);import java.util.*;
     System.out.println("Abra cadabra hocus pocus...");
     System.out.println("Abra "+colorize("cadabra",BOLD,YELLOW+BRIGHT,BLUE+BACKGROUND)+" hocus pocus...");
     System.out.println(colorize("Abra",BOLD,BLACK,YELLOW+BACKGROUND+BRIGHT)+" cadabra hocus pocus...");
@@ -92,8 +94,23 @@ public class Text{
     }
     int[] Integers;
     Integers = new int[4];
-    Integers[0] = (Math.random());
-    go(2, 80/4*1);
-    System.out.print(Integers[0]);
+    for(int r =0; r <= 3; r++){
+      double rand = Math.random()*100;
+      int values = (int)rand;
+      Integers[r] = values;
+      go(2, 10+r*20);
+      System.out.print(Integers[r]);
+      }
     }
+    Scanner input = new Scanner(System.in);
+    input s = getInput();
+    While(s != q){
+     for(int i = 0; i < 80; i ++){
+       for(int j = 0; j < 30; j ++){
+         go(j,i);
+         System.out.print(" ");
+       }
+     }
+   }
+
  }
