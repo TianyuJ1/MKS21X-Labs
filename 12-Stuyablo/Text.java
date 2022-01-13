@@ -102,13 +102,17 @@ public class Text{
       System.out.print(Integers[r]);
       }
     }
+
     Scanner input = new Scanner(System.in);
-    input s = getInput();
-    While(s != q){
+    String s = input.nextLine();
+    int s = getInput();
+
+    while (s.hasNext() == true ) {
      for(int i = 0; i < 80; i ++){
        for(int j = 0; j < 30; j ++){
          go(j,i);
          System.out.print(" ");
+         s++;
        }
      }
    }
