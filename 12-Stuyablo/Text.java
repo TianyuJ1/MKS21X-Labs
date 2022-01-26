@@ -1,5 +1,6 @@
 import java.lang.Math;
 import java.util.*;
+import java.util.Scanner;
 public class Text{
   /*Base colors*/
   private static int BLACK = 30;
@@ -44,7 +45,9 @@ public class Text{
     System.out.print("\u001b[2J");
   }
 
-  /*Overloaded Colorize methods.
+  /*Overltring s = input.nextLine();
+    //int s = getInput();
+oaded ColoriSystem.out.print(" ");ze methods.
     c1,c2 and c3 are any color modifiers such as bold/color/background color etc.
   */
   public static String colorize(String text,int c1){
@@ -92,29 +95,38 @@ public class Text{
       go(j, 79);
       System.out.print(colorize(" ",YELLOW+BRIGHT,BLUE+BACKGROUND));
     }
-    int[] Integers;
-    Integers = new int[4];
-    for(int r =0; r <= 3; r++){
-      double rand = Math.random()*100;
-      int values = (int)rand;
-      Integers[r] = values;
-      go(2, 10+r*20);
-      System.out.print(Integers[r]);
-      }
+      go(30, 80);
+      System.out.print(" ");
+
+      int[] Integers;
+      Integers = new int[4];
+      for(int r =0; r <= 3; r++){
+        double rand = Math.random()*100;
+        int values = (int)rand;
+        Integers[r] = values;
+        go(2, 10+r*20);
+        if(rand > 25){
+          System.out.print(colorize(Integer.toString(Integers[r]), GREEN));
+        }
+        if(rand <= 25){
+          System.out.print(colorize(Integer.toString(Integers[r]), RED));
+        }
+      for(int e = 0; e < 30; e ++)
+        go(e, 79);
+        System.out.print(colorize(" ",YELLOW+BRIGHT,BLUE+BACKGROUND));
+
     }
-
-    Scanner input = new Scanner(System.in);
+  }
+}
+/*
+   Scanner input = new Scanner(System.in);
     String s = input.nextLine();
-    int s = getInput();
+    //int s = getInput();
 
-    while (s.hasNext() == true ) {
+    if(s.equals("q")){}
      for(int i = 0; i < 80; i ++){
        for(int j = 0; j < 30; j ++){
          go(j,i);
          System.out.print(" ");
          s++;
-       }
-     }
-   }
-
- }
+       }*/

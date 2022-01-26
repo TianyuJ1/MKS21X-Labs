@@ -6,14 +6,39 @@ public class StuyabloGame{
   private static final int BORDER_BACKGROUND = Text.WHITE + Text.BACKGROUND;
 
   public static void main(String[] args) {
-    run();
+    drawPary(3);
   }
 
   //Display a List of 1-4 adventurers on the rows row through row+3 (4 rows max)
   //Should include Name and HP on 2 separate lines. (more to be added later)
   public static void drawParty(ArrayList<Adventurer> party,int startRow){
     /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-    //YOUR CODE HERE
+    for(int i = 0; i < 80; i ++){
+      go(0,i);
+      System.out.print(colorize(" ",YELLOW+BRIGHT,BLUE+BACKGROUND));
+      go(29,i);
+      System.out.print(colorize(" ",YELLOW+BRIGHT,BLUE+BACKGROUND));
+    }
+
+    for(int j = 0; j < 30; j ++){
+      go(j,0);
+      System.out.print(colorize(" ",YELLOW+BRIGHT,BLUE+BACKGROUND));
+      go(j, 79);
+      System.out.print(colorize(" ",YELLOW+BRIGHT,BLUE+BACKGROUND));
+    }
+      go(30, 80);
+      System.out.print(" ");
+
+    int[] Integers;
+    Integers = new int[4];
+    for(int r =0; r <= 3; r++){
+      double rand = Math.random()*100;
+      int values = (int)rand;
+      Integers[r] = values;
+      go(2, 10+r*20);
+      System.out.print(Integers[r]);
+      }
+    }
     /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
   }
 
